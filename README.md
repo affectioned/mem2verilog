@@ -1,6 +1,6 @@
 # mem2verilog
 
-**If you daily-drive Windows:** You can make a persistent Ubuntu USB boot drive with [Rufus](https://rufus.ie/) that saves your data, so you can boot into Linux, run this tool, and then return to Windows without losing anything.
+**If you daily-drive Windows:** You can make a persistent Ubuntu USB boot drive with [Rufus](https://rufus.ie/) that saves your data, so you can boot into Linux, run this tool, and then return to Windows without losing anything on your Ubuntu setup.
 
 **If you’re new to compiling C on Linux:** Follow this guide to learn how to create and build the `.c` file:  
 [https://medium.com/@filip.melka/your-first-c-program-on-linux-a-quick-guide-with-vim-and-vscodium-bc941228d4b2](https://medium.com/@filip.melka/your-first-c-program-on-linux-a-quick-guide-with-vim-and-vscodium-bc941228d4b2)
