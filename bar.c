@@ -38,12 +38,12 @@ uint8_t main(int argc, char **argv)
     }
 
     uint32_t sys_handle = open(argv[1], O_RDWR | O_SYNC);
-    PRINT_BOTH("Opening File : %s\n", argv[1]);
+    fprintf("Opening File : %s\n", argv[1]);
 
     uint8_t type_width = sizeof(uint32_t);
     if (sys_handle == -1)
     {
-        PRINT_BOTH("Failed to open with error : %s\n", strerror(errno));
+        fprintf("Failed to open with error : %s\n", strerror(errno));
         fclose(output_file);
         return EXIT_FAILURE;
     }
@@ -55,13 +55,13 @@ uint8_t main(int argc, char **argv)
     void *map_base = mmap(0, map_size, PROT_READ | PROT_WRITE, MAP_SHARED, sys_handle, target_base);
     if (map_base == MAP_FAILED)
     {
-        PRINT_BOTH("Memory mapping failed: %s\n", strerror(errno));
+        fprintf("Memory mapping failed: %s\n", strerror(errno));
         close(sys_handle);
         fclose(output_file);
         return EXIT_FAILURE;
     }
 
-    PRINT_BOTH("PCI Memory mapped to: 0x%08lx.\n", (unsigned long)map_base);
+    fprintf("PCI Memory mapped to: 0x%08lx.\n", (unsigned long)map_base);
 
     for (uint16_t i = 0; i < 0x1000 / type_width + 1; i++)
     {
